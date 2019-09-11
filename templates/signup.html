@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+
+<form action="/postsignup/" method = "POST">
+	{% csrf_token %}
+	<input type="email" name="email" placeholder="Email" required><br>
+	<input type="text" name="refid" placeholder="Refrigerator ID" required><br>
+	<input type="password" name="password" placeholder="Set up a pin" required>
+	<input type="submit" value="Signup">
+
+</form>
+
+{% endblock content %}

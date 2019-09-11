@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{% block title_name%}Home{%endblock title_name%}</title>
+	{% include  'snippets/css.html' %}
+	{% include  'snippets/js.html' %}
+</head>
+<body>
+	<div class = "jumbotron"><h1>Smart Refrigerator</h1>
+</div>
+<center>
+<div class="nav" style="background-color: #ececec;">
+{% if request.session.current_user %}
+<a href="/logout/">Logout</a>
+{% else %}
+	<a href="/login/">Login</a>
+{% endif %}
+	 |
+ <a href="/home/">Add Details</a>  |  <a href="/ShowCurrentInventory/">Notifications</a>  |   <a href="/about/">About</a><br><br>
+</div></center>
+<div style="margin-top: 20px;"></div>
+<div class="container">
+{% block content %}
+<br>
+
+
+{% endblock content %}
+</div>
+<!-- <div class="footer">Footer</div>
+ --></body>
+</html>

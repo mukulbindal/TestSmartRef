@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+
+{% block title_name %}
+{{ block.super }}
+{% endblock title_name %}
+
+{% block content %}
+
+<div class="container">
+
+
+{% for item in details %}
+
+{% if 'rotten' in item  %}
+<div style = "color:red;background-color:#ffcccc;">
+{% elif 'out' in item  %}
+<div style = "color:red;background-color:#fee;">
+{% elif 'taken' in item %}
+<div style = "color:blue;background-color:#ccccff;">
+{% else %}
+<div style = "color:green;background-color:#ccffcc;">
+
+{% endif %}
+<p>{{item}}</p>
+</div>
+{% endfor %}
+<br><br>
+<table>
+	<tr><th>Item</th><th>Quantity Available</th></tr>
+	<tr><td>Banana</td><td>{{table.banana}}</td></tr>
+	<tr><td>Capsicum</td><td>{{table.capsicum}}</td></tr>
+	<tr><td>Pineapple</td><td>{{table.pineapple}}</td></tr>
+	<tr><td>Fanta</td><td></td>{{table.fanta}}</tr>
+	<tr><td>Cabbage</td><td></td>{{table.cabbage}}</tr>
+</table>
+
+</div>
+ <script type="text/javascript">
+	function timedRefresh(timeoutPeriod) {
+	setTimeout("location.reload(true);",timeoutPeriod);
+}
+
+window.onload = timedRefresh(10000);
+
+</script>
+ 
+{% endblock content %}

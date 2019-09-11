@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+
+{% block title_name %}
+{{ block.super }}
+{% endblock title_name %}
+
+{% block content %}
+{% if updated %}
+<p>Successfully added!!</p>
+{% endif %}
+{% if message %}
+{% for msg in message %}
+	<p>{{msg}}</p>
+{% endfor %}
+{% endif %}
+<div class="container">
+<form action = "/postenter/"method="post">{% csrf_token %}
+	<pre>
+	Item Name              | <input type="text"  name="item_name">
+	Expiry Period(in days) | <input type="text"  name="expiry_period">
+	<span class="glyphicon glyphicon-plus"></span><input type="submit" name="additem" value="Add this Item">
+	</pre>
+</form>
+</div>
+
+
+{% endblock content %}
