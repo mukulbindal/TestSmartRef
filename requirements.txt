@@ -88,7 +88,7 @@ python-engineio==1.2.4
 python-jwt==2.0.1
 python-socketio==1.7.1
 pytz==2019.1
-PyYAML==5.1.1
+PyYAML==5.4
 redis==3.3.6
 reportlab==3.5.23
 requests==2.11.1
