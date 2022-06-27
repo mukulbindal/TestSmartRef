@@ -90,7 +90,7 @@ python-socketio==1.7.1
 pytz==2019.1
 PyYAML==5.1.1
 redis==3.3.6
-reportlab==3.5.23
+reportlab==3.5.55
 requests==2.11.1
 requests-toolbelt==0.7.0
 rsa==4.0
